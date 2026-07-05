@@ -1,0 +1,35 @@
+{
+  "name": "skillroute-backend",
+  "version": "1.0.0",
+  "description": "SkillRoute AI - Unified Backend API",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "tsx --env-file=.env server.js",
+    "dev": "tsx watch --env-file=.env server.js",
+    "test:services": "tsx test-services.js",
+    "test:phase0": "node scripts/verify-phase0.mjs",
+    "test:phase1": "node scripts/verify-phase1.mjs"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@supabase/supabase-js": "^2.38.0",
+    "axios": "^1.13.2",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.7",
+    "express-rate-limit": "^6.8.0",
+    "express-validator": "^7.0.1",
+    "helmet": "^7.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.21.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.3.0"
+  }
+}

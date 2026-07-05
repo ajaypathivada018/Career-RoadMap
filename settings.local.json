@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C \"c:/Users/vamsi/Desktop/Career OS\" log --oneline -20)",
+      "Bash(git -C \"c:/Users/vamsi/Desktop/Career OS\" status --short)",
+      "Bash(timeout 8 node -e \"import\\('./server.js'\\).then\\(\\(\\)=>setTimeout\\(\\(\\)=>process.exit\\(0\\),3000\\)\\).catch\\(e=>{console.error\\('BOOT FAIL:',e.message\\);process.exit\\(1\\)}\\)\")",
+      "Bash(mkdir -p apps)",
+      "Bash(mv backend/main-app/backend apps/api)",
+      "Bash(rm -rf backend)",
+      "Bash(mv frontend/course-generation apps/web)",
+      "PowerShell(Get-Process node -ErrorAction SilentlyContinue)",
+      "Bash(timeout 240 npx --no-install next build)",
+      "Bash(npm install *)",
+      "PowerShell(Remove-Item -Force \"C:\\\\Users\\\\vamsi\\\\Desktop\\\\Career OS\\\\apps\\\\web\\\\components\\\\Header.tsx\"; Remove-Item -Force \"C:\\\\Users\\\\vamsi\\\\Desktop\\\\Career OS\\\\apps\\\\web\\\\components\\\\providers\\\\ClientProviders.tsx\"; Remove-Item -Force \"C:\\\\Users\\\\vamsi\\\\Desktop\\\\Career OS\\\\apps\\\\web\\\\components\\\\layout\\\\Footer.tsx\"; if \\(\\(Test-Path \"C:\\\\Users\\\\vamsi\\\\Desktop\\\\Career OS\\\\apps\\\\web\\\\components\\\\providers\"\\) -and -not \\(Get-ChildItem \"C:\\\\Users\\\\vamsi\\\\Desktop\\\\Career OS\\\\apps\\\\web\\\\components\\\\providers\"\\)\\) { Remove-Item \"C:\\\\Users\\\\vamsi\\\\Desktop\\\\Career OS\\\\apps\\\\web\\\\components\\\\providers\" }; Write-Output \"Deleted Header, ClientProviders, Footer \\(and empty providers/ dir if applicable\\)\")",
+      "Bash(npm run *)",
+      "PowerShell($conns = Get-NetTCPConnection -LocalPort 3002 -State Listen -ErrorAction SilentlyContinue; if \\($conns\\) { $conns | ForEach-Object { Write-Output \\(\"Killing PID \" + $_.OwningProcess\\); Stop-Process -Id $_.OwningProcess -Force -ErrorAction SilentlyContinue } } else { Write-Output \"Nothing listening on 3002\" }; Start-Sleep -Milliseconds 500; if \\(Get-NetTCPConnection -LocalPort 3002 -State Listen -ErrorAction SilentlyContinue\\) { Write-Output \"STILL HELD\" } else { Write-Output \"Port 3002 free\" })",
+      "PowerShell(foreach \\($p in @\\(5000, 3002\\)\\) { $conn = Get-NetTCPConnection -LocalPort $p -State Listen -ErrorAction SilentlyContinue; if \\($conn\\) { Write-Output \\(\"Port \" + $p + \": held by PID \" + $conn.OwningProcess + \" -- stopping\"\\); Stop-Process -Id $conn.OwningProcess -Force -ErrorAction SilentlyContinue } else { Write-Output \\(\"Port \" + $p + \": free\"\\) } })",
+      "Bash(npm start *)"
+    ]
+  }
+}
